@@ -1,11 +1,12 @@
 package com.lifecalc.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.List;
+
+import java.io.Serializable;
+import javax.persistence.*;
 
 
 /**

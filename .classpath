@@ -28,21 +28,39 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/developer/.m2/repository/com/h2database/h2/1.4.193/h2-1.4.193.jar" sourcepath="/home/developer/.m2/repository/com/h2database/h2/1.4.193/h2-1.4.193-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="com.h2database"/>
-			<attribute name="maven.artifactId" value="h2"/>
-			<attribute name="maven.version" value="1.4.193"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="/home/developer/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar" sourcepath="/home/developer/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.hibernate.javax.persistence"/>
 			<attribute name="maven.artifactId" value="hibernate-jpa-2.1-api"/>
 			<attribute name="maven.version" value="1.0.0.Final"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/developer/.m2/repository/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar" sourcepath="/home/developer/.m2/repository/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-web"/>
+			<attribute name="maven.version" value="4.3.6.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/developer/.m2/repository/org/springframework/data/spring-data-commons-core/1.4.1.RELEASE/spring-data-commons-core-1.4.1.RELEASE.jar" sourcepath="/home/developer/.m2/repository/org/springframework/data/spring-data-commons-core/1.4.1.RELEASE/spring-data-commons-core-1.4.1.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework.data"/>
+			<attribute name="maven.artifactId" value="spring-data-commons-core"/>
+			<attribute name="maven.version" value="1.4.1.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/developer/.m2/repository/org/springframework/data/spring-data-commons/1.12.7.RELEASE/spring-data-commons-1.12.7.RELEASE.jar" sourcepath="/home/developer/.m2/repository/org/springframework/data/spring-data-commons/1.12.7.RELEASE/spring-data-commons-1.12.7.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework.data"/>
+			<attribute name="maven.artifactId" value="spring-data-commons"/>
+			<attribute name="maven.version" value="1.12.7.RELEASE"/>
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
