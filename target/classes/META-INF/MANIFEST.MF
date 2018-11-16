@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: lifeCalcBackEnd
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: developer
+Implementation-Vendor-Id: com.lifecalc-back
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/lifeCalcBackEnd
+Created-By: Maven Integration for Eclipse
+
