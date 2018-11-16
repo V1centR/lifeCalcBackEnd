@@ -1,12 +1,12 @@
-package com.lifecalcback.lifeCalcBackEnd;
+package com.lifecalc.lifecalcBack;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LifeCalcBackEndApplication {
+public class LifecalcBackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LifeCalcBackEndApplication.class, args);
+		SpringApplication.run(LifecalcBackApplication.class, args);
 	}
 }
