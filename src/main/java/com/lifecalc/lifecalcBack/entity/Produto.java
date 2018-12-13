@@ -1,38 +1,41 @@
-package com.lifecalc.entity;
+package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
 /**
- * The persistent class for the centro_custo database table.
+ * The persistent class for the produto database table.
  * 
  */
 @Entity
-@Table(name="centro_custo")
-@NamedQuery(name="CentroCusto.findAll", query="SELECT c FROM CentroCusto c")
-public class CentroCusto implements Serializable {
+@Table(name="produto")
+@NamedQuery(name="Produto.findAll", query="SELECT p FROM Produto p")
+public class Produto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id;
 
-	private double base;
-
-	@Column(name="base_date")
-	private int baseDate;
+	private int counter;
 
 	private String description;
 
 	private String name;
 
+	private double preco;
+
 	//bi-directional many-to-one association to Operation
-	@OneToMany(mappedBy="centroCustoBean")
+	@OneToMany(mappedBy="produtoBean")
 	private List<Operation> operations;
 
-	public CentroCusto() {
+	//bi-directional many-to-one association to Categoria
+	@ManyToOne
+	@JoinColumn(name="cat")
+	private Categoria categoria;
+
+	public Produto() {
 	}
 
 	public int getId() {
@@ -43,20 +46,12 @@ public class CentroCusto implements Serializable {
 		this.id = id;
 	}
 
-	public double getBase() {
-		return this.base;
+	public int getCounter() {
+		return this.counter;
 	}
 
-	public void setBase(double base) {
-		this.base = base;
-	}
-
-	public int getBaseDate() {
-		return this.baseDate;
-	}
-
-	public void setBaseDate(int baseDate) {
-		this.baseDate = baseDate;
+	public void setCounter(int counter) {
+		this.counter = counter;
 	}
 
 	public String getDescription() {
@@ -75,6 +70,14 @@ public class CentroCusto implements Serializable {
 		this.name = name;
 	}
 
+	public double getPreco() {
+		return this.preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
 	public List<Operation> getOperations() {
 		return this.operations;
 	}
@@ -85,16 +88,24 @@ public class CentroCusto implements Serializable {
 
 	public Operation addOperation(Operation operation) {
 		getOperations().add(operation);
-		operation.setCentroCustoBean(this);
+		operation.setProdutoBean(this);
 
 		return operation;
 	}
 
 	public Operation removeOperation(Operation operation) {
 		getOperations().remove(operation);
-		operation.setCentroCustoBean(null);
+		operation.setProdutoBean(null);
 
 		return operation;
+	}
+
+	public Categoria getCategoria() {
+		return this.categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 }

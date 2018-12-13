@@ -1,0 +1,7 @@
+com/lifecalc/lifecalcBack/entity/Produto.class
+com/lifecalc/lifecalcBack/repo/CategoriaRepo.class
+com/lifecalc/lifecalcBack/controller/CategoriaController.class
+com/lifecalc/lifecalcBack/entity/Operation.class
+com/lifecalc/lifecalcBack/entity/Categoria.class
+com/lifecalc/lifecalcBack/LifecalcBackApplication.class
+com/lifecalc/lifecalcBack/entity/CentroCusto.class

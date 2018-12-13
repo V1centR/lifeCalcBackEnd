@@ -12,5 +12,4 @@ public class LifecalcBackApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }

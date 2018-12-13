@@ -1,4 +1,4 @@
-package com.lifecalc.entity;
+package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
