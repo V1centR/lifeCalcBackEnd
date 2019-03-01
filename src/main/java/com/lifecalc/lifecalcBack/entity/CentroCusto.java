@@ -3,6 +3,9 @@ package com.lifecalc.lifecalcBack.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -17,13 +20,12 @@ public class CentroCusto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private double base;
-
+	
 	@Column(name="base_date")
-	private int baseDate;
+	private String baseDate;
 
 	private String description;
 
@@ -31,6 +33,7 @@ public class CentroCusto implements Serializable {
 
 	//bi-directional many-to-one association to Operation
 	@OneToMany(mappedBy="centroCustoBean")
+	@JsonBackReference
 	private List<Operation> operations;
 
 	public CentroCusto() {
@@ -52,12 +55,12 @@ public class CentroCusto implements Serializable {
 		this.base = base;
 	}
 
-	public int getBaseDate() {
+	public String getBaseDate() {
 		return this.baseDate;
 	}
 
-	public void setBaseDate(int baseDate) {
-		this.baseDate = baseDate;
+	public void setBaseDate(String string) {
+		this.baseDate = string;
 	}
 
 	public String getDescription() {

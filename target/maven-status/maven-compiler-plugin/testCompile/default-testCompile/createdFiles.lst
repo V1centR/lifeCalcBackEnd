@@ -1,1 +1,6 @@
+com/lifecalc/lifecalcBack/AddOperationsTests.class
+com/lifecalc/lifecalcBack/DateFormatTest.class
+com/lifecalc/lifecalcBack/CategoryInsertsTests.class
+com/lifecalc/lifecalcBack/AddCostCenterTests.class
+com/lifecalc/lifecalcBack/GetMonthRangeTests.class
 com/lifecalc/lifecalcBack/LifecalcBackApplicationTests.class

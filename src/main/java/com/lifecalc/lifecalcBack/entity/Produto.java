@@ -32,7 +32,7 @@ public class Produto implements Serializable {
 
 	//bi-directional many-to-one association to Categoria
 	@ManyToOne
-	@JoinColumn(name="cat")
+	@JoinColumn(name="category")
 	private Categoria categoria;
 
 	public Produto() {

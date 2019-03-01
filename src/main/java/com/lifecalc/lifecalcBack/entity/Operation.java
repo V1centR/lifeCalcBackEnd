@@ -1,7 +1,15 @@
 package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 /**
@@ -17,7 +25,8 @@ public class Operation implements Serializable {
 	@Id
 	private int id;
 
-	private int date;
+	//@Temporal(TemporalType.TIMESTAMP)
+	private String date;
 
 	private String location;
 
@@ -26,12 +35,33 @@ public class Operation implements Serializable {
 	//bi-directional many-to-one association to Produto
 	@ManyToOne
 	@JoinColumn(name="produto")
+	@JsonBackReference
 	private Produto produtoBean;
 
 	//bi-directional many-to-one association to CentroCusto
 	@ManyToOne
 	@JoinColumn(name="centro_custo")
+	@JsonBackReference
 	private CentroCusto centroCustoBean;
+	
+	public String month;
+	public Double total;
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
 
 	public Operation() {
 	}
@@ -44,11 +74,11 @@ public class Operation implements Serializable {
 		this.id = id;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return this.date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

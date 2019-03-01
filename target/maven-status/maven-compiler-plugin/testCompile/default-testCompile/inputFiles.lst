@@ -1,1 +1,6 @@
-/home/developer/workspace-angular/lifecalcBack/src/test/java/com/lifecalc/lifecalcBack/LifecalcBackApplicationTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/AddOperationsTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/AddCostCenterTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/GetMonthRangeTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/CategoryInsertsTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/LifecalcBackApplicationTests.java
+/home/developer/workspace-angular/lifeCalcBackEnd/src/test/java/com/lifecalc/lifecalcBack/DateFormatTest.java
