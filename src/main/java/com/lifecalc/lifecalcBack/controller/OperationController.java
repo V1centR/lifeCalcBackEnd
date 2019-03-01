@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.hibernate.query.criteria.internal.predicate.IsEmptyPredicate;
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.json.JSONObject;
@@ -59,11 +60,13 @@ public class OperationController {
 	
 	@CrossOrigin
 	@RequestMapping(path="/month-range", method=RequestMethod.POST, consumes="application/json",produces="application/json")
-	public @ResponseBody String searchByMonthRange(@RequestBody String monthsRange){
+	public @ResponseBody ArrayNode searchByMonthRange(@RequestBody String monthsRange){
 	
 		JSONObject jsonObj = new JSONObject(monthsRange);
 		String startDate = jsonObj.getString("startDate");
 		String finalDate = jsonObj.getString("finalDate");
+		
+		System.out.println("Params Received::: " + jsonObj);
 		
 		DateValueMonths currentQueryResult = null;
 		
@@ -77,32 +80,40 @@ public class OperationController {
 		ArrayList<String> finalMonths = new ArrayList<String>();
 		finalMonths.add(inputFormat.format(dataInicio.toDate()));
 		
-		try {
-			
-			ObjectMapper objMapper = new ObjectMapper();
-			ArrayNode arrayNode = objMapper.createArrayNode();
-			
-		    for (int i = 0; i < months.getMonths(); i++) {
+		ObjectMapper objMapper = new ObjectMapper();
+		ArrayNode arrayNode = objMapper.createArrayNode();
+		
+		for (int i = 0; i <= months.getMonths(); i++) {
+	    	
+	    	dataInicioBkp = dataInicio;
+	    	finalMonths.add(inputFormat.format(dataInicio.toDate()));
+	    	
+	    	currentQueryResult = operationRepo.sumOperation(dataInicio.getYear(),dataInicio.getMonthOfYear());
+	    	
+	    	//json handle###
+	    	ObjectNode objNode = objMapper.createObjectNode();
+	    	
+	    	if(currentQueryResult == null) {
+	    		
+	    		System.out.println("######NÃO HÁ DADOS######" + i);
+	    		objNode.put("date", inputFormat.format(dataInicio.toDate()));
+		    	objNode.put("total", 0.00);
 		    	
-		    	dataInicio = dataInicioBkp.plusMonths(1);
-		    	dataInicioBkp = dataInicio;
-		    	finalMonths.add(inputFormat.format(dataInicio.toDate()));
-		    	
-		    	currentQueryResult = operationRepo.sumOperation(dataInicio.getYear(),dataInicio.getMonthOfYear());
-		    	
-		    	//JSON Handle ###########
-		    	ObjectNode objNode = objMapper.createObjectNode();
+	    	} else {
+	    		//JSON Handle ###########
 		    	objNode.put("date", inputFormat.format(dataInicio.toDate()));
 		    	objNode.put("total", currentQueryResult.getTotal());
-		    	arrayNode.add(objNode);
-		    	//JSON Handle ###########
-		    }
-		    
-			return arrayNode.toString();
-			
-		} catch (Exception e) {
-			return null;
-		}
+	    	}
+	    	
+	    	//Create json object
+	    	arrayNode.add(objNode);
+	    	
+	    	dataInicio = dataInicioBkp.plusMonths(1);
+	    }
+		
+		System.out.println("RESULT#####:: " + arrayNode);
+		return arrayNode;
+	    	
 	}
 	
 	@CrossOrigin
