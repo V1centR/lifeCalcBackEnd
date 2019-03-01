@@ -87,15 +87,13 @@ public class OperationController {
 	    	
 	    	dataInicioBkp = dataInicio;
 	    	finalMonths.add(inputFormat.format(dataInicio.toDate()));
-	    	
 	    	currentQueryResult = operationRepo.sumOperation(dataInicio.getYear(),dataInicio.getMonthOfYear());
 	    	
 	    	//json handle###
 	    	ObjectNode objNode = objMapper.createObjectNode();
 	    	
 	    	if(currentQueryResult == null) {
-	    		
-	    		System.out.println("######NÃO HÁ DADOS######" + i);
+
 	    		objNode.put("date", inputFormat.format(dataInicio.toDate()));
 		    	objNode.put("total", 0.00);
 		    	
@@ -110,8 +108,7 @@ public class OperationController {
 	    	
 	    	dataInicio = dataInicioBkp.plusMonths(1);
 	    }
-		
-		System.out.println("RESULT#####:: " + arrayNode);
+
 		return arrayNode;
 	    	
 	}
