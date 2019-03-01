@@ -43,25 +43,6 @@ public class Operation implements Serializable {
 	@JoinColumn(name="centro_custo")
 	@JsonBackReference
 	private CentroCusto centroCustoBean;
-	
-	public String month;
-	public Double total;
-
-	public String getMonth() {
-		return month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-	}
-
-	public Double getTotal() {
-		return total;
-	}
-
-	public void setTotal(Double total) {
-		this.total = total;
-	}
 
 	public Operation() {
 	}

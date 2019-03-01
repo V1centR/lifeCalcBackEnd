@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.hibernate.query.criteria.internal.predicate.IsEmptyPredicate;
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.json.JSONObject;
@@ -66,8 +65,6 @@ public class OperationController {
 		String startDate = jsonObj.getString("startDate");
 		String finalDate = jsonObj.getString("finalDate");
 		
-		System.out.println("Params Received::: " + jsonObj);
-		
 		DateValueMonths currentQueryResult = null;
 		
 		DateTime dataInicio = new DateTime(startDate);
@@ -98,19 +95,17 @@ public class OperationController {
 		    	objNode.put("total", 0.00);
 		    	
 	    	} else {
-	    		//JSON Handle ###########
+
 		    	objNode.put("date", inputFormat.format(dataInicio.toDate()));
 		    	objNode.put("total", currentQueryResult.getTotal());
 	    	}
 	    	
 	    	//Create json object
 	    	arrayNode.add(objNode);
-	    	
 	    	dataInicio = dataInicioBkp.plusMonths(1);
 	    }
 
 		return arrayNode;
-	    	
 	}
 	
 	@CrossOrigin
@@ -178,6 +173,7 @@ public class OperationController {
 		System.out.println(product);
 		
 		CentroCusto centroCusto = centroCustoRepo.find(Integer.parseInt(jsonItem.get("centroCusto").toString()));
+		System.out.println("CENTRO CUSTO###### " + centroCusto);
 		
 		Operation operation = new Operation();
 		

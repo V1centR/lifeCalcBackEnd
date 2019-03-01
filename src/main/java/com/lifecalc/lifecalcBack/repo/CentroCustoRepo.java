@@ -12,7 +12,7 @@ public interface CentroCustoRepo extends CrudRepository<CentroCusto, Integer> {
 	@Query("select c from CentroCusto c")
     List<CentroCusto> findAll();
 	
-	@Query("SELECT c FROM CentroCusto c WHERE c.name = :typeCost ORDER by c.id DESC")
+	@Query(value="SELECT * FROM centro_custo WHERE name = :typeCost ORDER BY id DESC LIMIT 1", nativeQuery=true)
 	CentroCusto findLast(String typeCost);
 	
 	@Query("SELECT c FROM CentroCusto c WHERE c.id = :id")
