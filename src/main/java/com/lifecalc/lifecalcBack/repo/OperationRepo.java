@@ -26,5 +26,4 @@ public interface OperationRepo extends CrudRepository<Operation, Integer>{
 	@Query(value="SELECT MONTH(date) as month,SUM(value) as total from operation WHERE YEAR(date) = :year AND MONTH(date) = :month GROUP BY month", nativeQuery = true)
 	DateValueMonths sumOperation(Integer year, Integer month);
 	
-	
 }

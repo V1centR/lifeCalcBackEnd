@@ -4,9 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,14 +22,6 @@ public class CategoriaController {
 
 	@Autowired
 	private CategoriaRepo categoriaRepo;
-	
-	
-//	@RequestMapping("/test")
-//	public @ResponseBody String getTest() {
-//		
-//		return "Test OK";
-//	}
-	
 
 	@CrossOrigin
 	@RequestMapping("/all")
@@ -45,15 +35,15 @@ public class CategoriaController {
 	}
 	
 	@CrossOrigin
-    @PostMapping()
-    public ResponseEntity insert(@RequestBody Categoria model) {
+    @PostMapping("/insert")
+    public HttpStatus insert(@RequestBody Categoria model) {
+		 
+		 try {
+			 Categoria categoria = categoriaRepo.save(model);
+			 return HttpStatus.CREATED;
+		} catch (Exception e) {
+			return HttpStatus.INTERNAL_SERVER_ERROR;
+		}
 		
-		 HttpHeaders headers = new HttpHeaders();
-		 Categoria categoria = categoriaRepo.save(model);
-		 if(categoria != null){
-			 return new ResponseEntity<>(headers, HttpStatus.CREATED);
-		 }else {
-			 return new ResponseEntity<>(headers, HttpStatus.INTERNAL_SERVER_ERROR);
-		 }
 	 }
 }
