@@ -32,7 +32,6 @@ public class CentroCustoController {
 	@PostMapping(path="/insert",consumes = "application/json", produces = "application/json")
 	public HttpStatus save(@RequestBody String costCenter) throws JsonProcessingException, IOException{
 		
-		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Calendar c = Calendar.getInstance();
 		String novaData = sdf.format(c.getTime());
@@ -49,7 +48,6 @@ public class CentroCustoController {
 		centroCustoRepo.save(costCenterObj);
 		System.out.println("CenterCost exec ok:: " + novaData);
 		return HttpStatus.CREATED;
-		
 	}
 	
 	@CrossOrigin
