@@ -2,7 +2,6 @@ package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -25,10 +24,6 @@ public class Produto implements Serializable {
 	private String name;
 
 	private double preco;
-
-	//bi-directional many-to-one association to Operation
-	@OneToMany(mappedBy="produtoBean")
-	private List<Operation> operations;
 
 	//bi-directional many-to-one association to Categoria
 	@ManyToOne
@@ -76,28 +71,6 @@ public class Produto implements Serializable {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
-	}
-
-	public List<Operation> getOperations() {
-		return this.operations;
-	}
-
-	public void setOperations(List<Operation> operations) {
-		this.operations = operations;
-	}
-
-	public Operation addOperation(Operation operation) {
-		getOperations().add(operation);
-		operation.setProdutoBean(this);
-
-		return operation;
-	}
-
-	public Operation removeOperation(Operation operation) {
-		getOperations().remove(operation);
-		operation.setProdutoBean(null);
-
-		return operation;
 	}
 
 	public Categoria getCategoria() {

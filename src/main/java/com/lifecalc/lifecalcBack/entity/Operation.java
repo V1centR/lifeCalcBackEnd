@@ -1,15 +1,11 @@
 package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import java.util.Date;
 
 
 /**
@@ -26,23 +22,28 @@ public class Operation implements Serializable {
 	private int id;
 
 	//@Temporal(TemporalType.TIMESTAMP)
-	private String date;
+	private Date date;
 
 	private String location;
 
 	private double value;
 
-	//bi-directional many-to-one association to Produto
+	//bi-directional many-to-one association to Categoria
 	@ManyToOne
-	@JoinColumn(name="produto")
-	@JsonBackReference
-	private Produto produtoBean;
+	@JoinColumn(name="category")
+	private Categoria categoria;
 
 	//bi-directional many-to-one association to CentroCusto
 	@ManyToOne
 	@JoinColumn(name="centro_custo")
 	@JsonBackReference
 	private CentroCusto centroCustoBean;
+
+	//bi-directional many-to-one association to User
+	@ManyToOne
+	@JoinColumn(name="user")
+	@JsonBackReference
+	private User userBean;
 
 	public Operation() {
 	}
@@ -55,11 +56,11 @@ public class Operation implements Serializable {
 		this.id = id;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return this.date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -79,12 +80,12 @@ public class Operation implements Serializable {
 		this.value = value;
 	}
 
-	public Produto getProdutoBean() {
-		return this.produtoBean;
+	public Categoria getCategoria() {
+		return this.categoria;
 	}
 
-	public void setProdutoBean(Produto produtoBean) {
-		this.produtoBean = produtoBean;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	public CentroCusto getCentroCustoBean() {
@@ -93,6 +94,14 @@ public class Operation implements Serializable {
 
 	public void setCentroCustoBean(CentroCusto centroCustoBean) {
 		this.centroCustoBean = centroCustoBean;
+	}
+
+	public User getUserBean() {
+		return this.userBean;
+	}
+
+	public void setUserBean(User userBean) {
+		this.userBean = userBean;
 	}
 
 }

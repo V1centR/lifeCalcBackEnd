@@ -1,3 +1,4 @@
+com/lifecalc/lifecalcBack/controller/UserController.class
 com/lifecalc/lifecalcBack/entity/Operation.class
 com/lifecalc/lifecalcBack/controller/CentroCustoController.class
 com/lifecalc/lifecalcBack/service/OperationService.class

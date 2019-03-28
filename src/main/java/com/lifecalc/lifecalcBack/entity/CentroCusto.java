@@ -23,13 +23,18 @@ public class CentroCusto implements Serializable {
 	private int id;
 
 	private double base;
-	
+
+	//@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="base_date")
 	private String baseDate;
 
 	private String description;
 
 	private String name;
+
+	//bi-directional many-to-one association to CentroCustoAction
+	@OneToMany(mappedBy="centroCustoBean")
+	private List<CentroCustoAction> centroCustoActions;
 
 	//bi-directional many-to-one association to Operation
 	@OneToMany(mappedBy="centroCustoBean")
@@ -59,8 +64,8 @@ public class CentroCusto implements Serializable {
 		return this.baseDate;
 	}
 
-	public void setBaseDate(String string) {
-		this.baseDate = string;
+	public void setBaseDate(String baseDate) {
+		this.baseDate = baseDate;
 	}
 
 	public String getDescription() {
@@ -77,6 +82,28 @@ public class CentroCusto implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<CentroCustoAction> getCentroCustoActions() {
+		return this.centroCustoActions;
+	}
+
+	public void setCentroCustoActions(List<CentroCustoAction> centroCustoActions) {
+		this.centroCustoActions = centroCustoActions;
+	}
+
+	public CentroCustoAction addCentroCustoAction(CentroCustoAction centroCustoAction) {
+		getCentroCustoActions().add(centroCustoAction);
+		centroCustoAction.setCentroCustoBean(this);
+
+		return centroCustoAction;
+	}
+
+	public CentroCustoAction removeCentroCustoAction(CentroCustoAction centroCustoAction) {
+		getCentroCustoActions().remove(centroCustoAction);
+		centroCustoAction.setCentroCustoBean(null);
+
+		return centroCustoAction;
 	}
 
 	public List<Operation> getOperations() {

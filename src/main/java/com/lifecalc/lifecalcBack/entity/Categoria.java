@@ -27,6 +27,10 @@ public class Categoria implements Serializable {
 
 	private String name;
 
+	//bi-directional many-to-one association to Operation
+	@OneToMany(mappedBy="categoria")
+	private List<Operation> operations;
+
 	//bi-directional many-to-one association to Produto
 	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
@@ -65,6 +69,28 @@ public class Categoria implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Operation> getOperations() {
+		return this.operations;
+	}
+
+	public void setOperations(List<Operation> operations) {
+		this.operations = operations;
+	}
+
+	public Operation addOperation(Operation operation) {
+		getOperations().add(operation);
+		operation.setCategoria(this);
+
+		return operation;
+	}
+
+	public Operation removeOperation(Operation operation) {
+		getOperations().remove(operation);
+		operation.setCategoria(null);
+
+		return operation;
 	}
 
 	public List<Produto> getProdutos() {
