@@ -1,5 +1,7 @@
+com/lifecalc/lifecalcBack/entity/User.class
 com/lifecalc/lifecalcBack/controller/UserController.class
 com/lifecalc/lifecalcBack/entity/Operation.class
+com/lifecalc/lifecalcBack/entity/CentroCustoAction.class
 com/lifecalc/lifecalcBack/controller/CentroCustoController.class
 com/lifecalc/lifecalcBack/service/OperationService.class
 com/lifecalc/lifecalcBack/repo/OperationRepo.class
@@ -10,6 +12,7 @@ com/lifecalc/lifecalcBack/controller/OperationController.class
 com/lifecalc/lifecalcBack/controller/ProductController.class
 com/lifecalc/lifecalcBack/entity/Categoria.class
 com/lifecalc/lifecalcBack/entity/DateValueMonths.class
+com/lifecalc/lifecalcBack/repo/UsersRepo.class
 com/lifecalc/lifecalcBack/repo/CentroCustoRepo.class
 com/lifecalc/lifecalcBack/controller/DateOperationsController.class
 com/lifecalc/lifecalcBack/LifecalcBackApplication.class

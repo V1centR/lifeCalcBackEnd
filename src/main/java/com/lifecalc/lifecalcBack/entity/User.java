@@ -2,6 +2,9 @@ package com.lifecalc.lifecalcBack.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -23,6 +26,7 @@ public class User implements Serializable {
 	@Column(name="email_send")
 	private String emailSend;
 
+	@Column(name="last_name")
 	private String lastName;
 
 	private String name;
@@ -32,6 +36,7 @@ public class User implements Serializable {
 	private String photo;
 
 	//bi-directional many-to-one association to Operation
+	@JsonIgnore
 	@OneToMany(mappedBy="userBean")
 	private List<Operation> operations;
 

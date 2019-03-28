@@ -22,7 +22,7 @@ public class Operation implements Serializable {
 	private int id;
 
 	//@Temporal(TemporalType.TIMESTAMP)
-	private Date date;
+	private String date;
 
 	private String location;
 
@@ -56,11 +56,11 @@ public class Operation implements Serializable {
 		this.id = id;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return this.date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

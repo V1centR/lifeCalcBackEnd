@@ -24,10 +24,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.lifecalc.lifecalcBack.entity.Categoria;
 import com.lifecalc.lifecalcBack.entity.CentroCusto;
 import com.lifecalc.lifecalcBack.entity.DateValueMonths;
 import com.lifecalc.lifecalcBack.entity.Operation;
 import com.lifecalc.lifecalcBack.entity.Produto;
+import com.lifecalc.lifecalcBack.repo.CategoriaRepo;
 import com.lifecalc.lifecalcBack.repo.CentroCustoRepo;
 import com.lifecalc.lifecalcBack.repo.OperationRepo;
 import com.lifecalc.lifecalcBack.repo.ProductRepo;
@@ -44,6 +46,9 @@ public class OperationController {
 	
 	@Autowired
 	private CentroCustoRepo centroCustoRepo;
+	
+	@Autowired
+	private CategoriaRepo catRepo;
 	
 	@CrossOrigin
 	@RequestMapping("/all")
@@ -152,7 +157,7 @@ public class OperationController {
 		Calendar c = Calendar.getInstance();
 		
 		JSONObject jsonItem = new JSONObject(operations);
-		JSONObject productItem = (JSONObject) jsonItem.get("produto");
+		JSONObject categoryItem = (JSONObject) jsonItem.get("produto");
 		
 		try {
 			retroTransAction = jsonItem.get("retro").toString() + ":01";
@@ -169,8 +174,7 @@ public class OperationController {
 		}
 		
 		//get prod Object
-		Produto product = productRepo.find(Integer.parseInt(productItem.get("id").toString()));
-		System.out.println(product);
+		Categoria categoria = catRepo.find(Integer.parseInt(categoryItem.get("id").toString()));
 		
 		CentroCusto centroCusto = centroCustoRepo.find(Integer.parseInt(jsonItem.get("centroCusto").toString()));
 		System.out.println("CENTRO CUSTO###### " + centroCusto);
@@ -179,7 +183,7 @@ public class OperationController {
 		
 		operation.setDate(novaData);
 		operation.setLocation("YCiaY5dasb32");
-		operation.setProdutoBean(product);
+		operation.setCategoria(categoria); //Bean(product);
 		operation.setValue(Double.parseDouble(jsonItem.get("value").toString()));
 		operation.setCentroCustoBean(centroCusto);
 		

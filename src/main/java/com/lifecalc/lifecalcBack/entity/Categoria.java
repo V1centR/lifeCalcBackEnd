@@ -28,6 +28,7 @@ public class Categoria implements Serializable {
 	private String name;
 
 	//bi-directional many-to-one association to Operation
+	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
 	private List<Operation> operations;
 

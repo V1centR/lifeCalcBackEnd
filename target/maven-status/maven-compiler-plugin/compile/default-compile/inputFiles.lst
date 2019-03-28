@@ -3,12 +3,15 @@
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/Operation.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/controller/OperationController.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/service/OperationService.java
+/home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/CentroCustoAction.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/controller/ProductController.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/Categoria.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/CentroCustoRepo.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/controller/CategoriaController.java
+/home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/UsersRepo.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/ProductRepo.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/LifecalcBackApplication.java
+/home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/User.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/CategoriaRepo.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/Produto.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/CentroCusto.java
