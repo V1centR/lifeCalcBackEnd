@@ -11,4 +11,6 @@ public interface UsersRepo extends CrudRepository<User, Integer> {
 
 	@Query("SELECT u FROM User u")
     List<User> findAll();
+
+	//void findByEmail();
 }

@@ -28,7 +28,6 @@ import com.lifecalc.lifecalcBack.entity.Categoria;
 import com.lifecalc.lifecalcBack.entity.CentroCusto;
 import com.lifecalc.lifecalcBack.entity.DateValueMonths;
 import com.lifecalc.lifecalcBack.entity.Operation;
-import com.lifecalc.lifecalcBack.entity.Produto;
 import com.lifecalc.lifecalcBack.repo.CategoriaRepo;
 import com.lifecalc.lifecalcBack.repo.CentroCustoRepo;
 import com.lifecalc.lifecalcBack.repo.OperationRepo;
@@ -41,8 +40,8 @@ public class OperationController {
 	@Autowired
 	private OperationRepo operationRepo;
 	
-	@Autowired
-	private ProductRepo productRepo;
+	//@Autowired
+	//private ProductRepo productRepo;
 	
 	@Autowired
 	private CentroCustoRepo centroCustoRepo;

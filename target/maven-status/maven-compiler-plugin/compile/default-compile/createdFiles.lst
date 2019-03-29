@@ -1,5 +1,6 @@
 com/lifecalc/lifecalcBack/entity/User.class
 com/lifecalc/lifecalcBack/controller/UserController.class
+com/lifecalc/lifecalcBack/security/WebSecurityConfig.class
 com/lifecalc/lifecalcBack/entity/Operation.class
 com/lifecalc/lifecalcBack/entity/CentroCustoAction.class
 com/lifecalc/lifecalcBack/controller/CentroCustoController.class
@@ -17,4 +18,5 @@ com/lifecalc/lifecalcBack/repo/CentroCustoRepo.class
 com/lifecalc/lifecalcBack/controller/DateOperationsController.class
 com/lifecalc/lifecalcBack/LifecalcBackApplication.class
 com/lifecalc/lifecalcBack/entity/CentroCusto.class
+com/lifecalc/lifecalcBack/security/UserValidation.class
 com/lifecalc/lifecalcBack/repo/ProductRepo.class

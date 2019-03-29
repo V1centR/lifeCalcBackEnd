@@ -13,8 +13,10 @@
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/LifecalcBackApplication.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/User.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/CategoriaRepo.java
+/home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/security/UserValidation.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/Produto.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/entity/CentroCusto.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/repo/OperationRepo.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/controller/CentroCustoController.java
 /home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/controller/DateOperationsController.java
+/home/dev/workspace-angular/lifeCalcBackEnd/src/main/java/com/lifecalc/lifecalcBack/security/WebSecurityConfig.java

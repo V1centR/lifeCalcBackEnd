@@ -34,6 +34,8 @@ public class User implements Serializable {
 	private String phone;
 
 	private String photo;
+	
+	private String password;
 
 	//bi-directional many-to-one association to Operation
 	@JsonIgnore
@@ -119,6 +121,14 @@ public class User implements Serializable {
 		operation.setUserBean(null);
 
 		return operation;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
